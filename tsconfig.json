@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+
+    "allowJs": true,        // JS import 허용
+    "checkJs": false,       // JS는 타입체크 안 함 (그냥 any 취급)
+    "noEmit": true,         // ✅ 어떤 파일도 컴파일해서 내보내지 않음
+
+    // TS는 엄격하게, 대신 JS에서 오는 implicit any는 허용
+    "strict": true,
+    "noImplicitAny": false,
+
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "types": ["vite/client"],
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.js"      // ✅ 기존 JS도 컴파일 대상에 포함
+  ]
+}
